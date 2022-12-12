@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+}
+.wrapper{
+  background: black;
+  position: fixed;
+  width: 100%;
+}
+.wrapper nav{
+  position: relative;
+  display: flex;
+  max-width: calc(100% - 200px);
+  margin: 0 auto;
+  height: 70px;
+  align-items: center;
+  justify-content: space-between;
+}
+nav .content{
+  display: flex;
+  align-items: center;
+}
+nav .content .links{
+  margin-left: 80px;
+  display: flex;
+}
+.content .logo a{
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+}
+.content .links li{
+  list-style: none;
+  line-height: 70px;
+}
+.content .links li a,
+.content .links li label{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 9px 17px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.content .links li label{
+  display: none;
+}
+.content .links li a:hover,
+.content .links li label:hover{
+  background: #323c4e;
+}
+.wrapper .search-icon,
+.wrapper .menu-icon{
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 70px;
+  width: 70px;
+  text-align: center;
+}
+.wrapper .menu-icon{
+  display: none;
+}
+.wrapper #show-search:checked ~ .search-icon i::before{
+  content: "\f00d";
+}
+.wrapper .search-box{
+  position: absolute;
+  height: 100%;
+  max-width: calc(100% - 50px);
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.wrapper #show-search:checked ~ .search-box{
+  opacity: 1;
+  pointer-events: auto;
+}
+.search-box input{
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  color: #fff;
+  background: #171c24;
+  padding: 0 100px 0 15px;
+}
+.search-box input::placeholder{
+  color: #f2f2f2;
+}
+.search-box .go-icon{
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 60px;
+  width: 70px;
+  background: #171c24;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+.wrapper input[type="checkbox"]{
+  display: none;
+}
+
+/* Responsive code start */
+@media screen and (max-width: 1250px){
+  .wrapper nav{
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  nav .content .links{
+    margin-left: 30px;
+  }
+  .content .links li a{
+    padding: 8px 13px;
+  }
+  .wrapper .search-box{
+    max-width: calc(100% - 100px);
+  }
+  .wrapper .search-box input{
+    padding: 0 100px 0 15px;
+  }
+}
+@media screen and (max-width: 900px){
+  .wrapper .menu-icon{
+    display: block;
+  }
+  .wrapper #show-menu:checked ~ .menu-icon i::before{
+    content: "\f00d";
+  }
+  nav .content .links{
+    display: block;
+    position: fixed;
+    background: #14181f;
+    height: 100%;
+    width: 100%;
+    top: 70px;
+    left: -100%;
+    margin-left: 0;
+    max-width: 350px;
+    overflow-y: auto;
+    padding-bottom: 100px;
+    transition: all 0.3s ease;
+  }
+  nav #show-menu:checked ~ .content .links{
+    left: 0%;
+  }
+  .content .links li{
+    margin: 15px 20px;
+  }
+  .content .links li a,
+  .content .links li label{
+    line-height: 40px;
+    font-size: 20px;
+    display: block;
+    padding: 8px 18px;
+    cursor: pointer;
+  }
+  .content .links li a.desktop-link{
+    display: none;
+  }
+}
+@media screen and (max-width: 400px){
+  .wrapper nav{
+    padding: 0 10px;
+  }
+  .content .logo a{
+    font-size: 27px;
+  }
+  .wrapper .search-box{
+    max-width: calc(100% - 70px);
+  }
+  .wrapper .search-box .go-icon{
+    width: 30px;
+    right: 0;
+  }
+  .wrapper .search-box input{
+    padding-right: 30px;
+  }
+}
+.dummy-text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  z-index: -1;
+  padding: 0 20px;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+.dummy-text h2{
+  font-size: 45px;
+  margin: 5px 0;
+}
+body, html{
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+}
+.background1, .background2, .background3{
+    position: relative;
+    opacity: 0.6;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.background1{
+    background-image: url('img/banner1.png');
+    min-height: 100%;
+}
+.background2{
+    background-image: url('img/banner2.png');
+    min-height: 350px;
+}
+.background3{
+    background-image: url('img/banner3.png');
+    min-height: 350px;
+}
+.buttondiv{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: black;
+}
+.button{
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid white;
+    color: white;
+    padding: 16px;
+    font-size: 22px;
+    letter-spacing: 8px;
+}
+.button:hover{
+    background-color: #232425;
+    transition: 1s;
+    opacity: 0.5;
+}
+.heading{
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-align: center;
+    color: black;
+}
+.welcome{
+    color: #6b6a6a;
+    background-color: white;
+    text-align: center;
+    padding: 60px 50px;
+    text-align: justify;
+}
+.about{
+    color: #9c9b9b;
+    background-color: #232425;
+    text-align: center;
+    padding: 60px 50px;
+    text-align: justify;
+}
+.contact{
+    color: #232425;
+    background-color: white;
+    text-align: center;
+    padding: 60px 50px;
+    text-align: justify;
+}
+.wrapper{
+    position: relative;
+
+}
+
+body
+{
+	font-family: "Lato", sans-serif;
+}
+.sidenav
+{
+	background: #250000;
+	position: fixed;
+	height: 100%;
+	width: 20%;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	overflow-x: hidden;
+	padding-top: 30px;
+}
+.sidenav a
+{
+	color: #fff;
+	padding: 10px 15px 10px 16px;
+	text-decoration: none;
+	font-size: 25px;
+	display: block;
+}
+.sidenav a:hover
+{
+	background: rgb(255, 0, 140);
+}
+h2
+{
+	padding: 10px 15px 10px 16px;
+	color: rgb(116, 211, 240);
+	border-bottom-style: solid;
+}
+.main
+{
+	
+	margin-left: 20%;
+	padding: 4px 10px;
+	color: black;
+	display: inline-block;
+}
+
+/*Making responsive*/
+@media screen and (max-width: 600px)
+{
+	.sidenav
+	{
+		padding-top: 15px;
+		width: 155px;
+
+	}
+	.sidenav a
+	{
+		padding-left: 20px;
+		font-size: 18px;
+	}
+	.main
+	{
+		margin-left: 32%;
+		font-size: 15px;
+	}
+	p
+	{
+		display: inline-block;
+    padding-left: 20%;
+    padding-right: 20%;
+	}
+}
+
+h1{
+  padding: 10px 15px  ;
+}
